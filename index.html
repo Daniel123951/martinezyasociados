@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martínez y Asociados - Abogados en Venezuela</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            width: 100%;
+        }
+
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            width: 100%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #fbbf24;
+        }
+
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex: 1;
+        }
+
+        .header-logo {
+            height: 96px;
+            width: 96px;
+            object-fit: contain;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .header-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .header-text h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fbbf24;
+            margin: 0;
+        }
+
+        .header-text p {
+            font-size: 12px;
+            color: #ffffff;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        .header-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .header-nav a:hover {
+            color: #fbbf24;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-button span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #fbbf24;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 90px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            padding: 16px;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 16px;
+            font-size: 18px;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu a:hover {
+            background-color: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+
+        /* Hero Section */
+        .hero {
+            width: 100%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 80px 24px;
+            margin-top: 120px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .hero-logo {
+            height: 192px;
+            width: auto;
+            object-fit: contain;
+            margin: 0 auto 32px auto;
+            display: block;
+        }
+
+        .hero-title {
+            font-size: 60px;
+            font-weight: bold;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: #ffffff;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services {
+            width: 100%;
+            background-color: #0a0a0a;
+            padding: 80px 24px;
+        }
+
+        .services-content {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .services-title {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 64px;
+            color: #fbbf24;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background-color: #3d2817;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            padding: 32px;
+            border-top: 4px solid #fbbf24;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(251, 191, 36, 0.3);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: #fbbf24;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+
+        .service-list {
+            list-style: none;
+            font-size: 14px;
+            color: #e5e5e5;
+        }
+
+        .service-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Contact Section */
+        .contact {
+            width: 100%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 80px 24px;
+        }
+
+        .contact-content {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 64px;
+            color: #fbbf24;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .contact-item {
+            background-color: rgba(61, 40, 23, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            background-color: rgba(61, 40, 23, 0.8);
+            border-color: rgba(251, 191, 36, 0.5);
+        }
+
+        .contact-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .contact-item h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #fbbf24;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            font-size: 16px;
+            color: #ffffff;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            color: #fbbf24;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-container {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+        }
+
+        .whatsapp-menu {
+            display: none;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            min-width: 280px;
+            margin-bottom: 16px;
+        }
+
+        .whatsapp-menu-header {
+            background-color: #25D366;
+            color: #ffffff;
+            padding: 16px;
+        }
+
+        .whatsapp-menu-header h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .whatsapp-menu-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .whatsapp-menu-body {
+            background-color: #ffffff;
+            padding: 12px;
+        }
+
+        .whatsapp-contact-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background-color: #f3f4f6;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-contact-option:last-child {
+            margin-bottom: 0;
+        }
+
+        .whatsapp-contact-option:hover {
+            background-color: #e5e7eb;
+        }
+
+        .whatsapp-avatar {
+            background-color: #dcfce7;
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 24px;
+        }
+
+        .whatsapp-contact-info p:first-child {
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 2px;
+        }
+
+        .whatsapp-contact-info p:last-child {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #20ba5a;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-button svg {
+            width: 40px;
+            height: 40px;
+            fill: currentColor;
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            background-color: #111827;
+            color: white;
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .header-content {
+                padding: 12px 16px;
+            }
+
+            .header-left {
+                gap: 12px;
+            }
+
+            .header-nav {
+                display: none;
+            }
+
+            .mobile-menu-button {
+                display: block;
+            }
+
+            .header-text h1 {
+                font-size: 14px;
+            }
+
+            .header-text p {
+                font-size: 9px;
+            }
+
+            .header-logo {
+                height: 56px;
+                width: 56px;
+            }
+
+            .hero {
+                padding: 40px 16px;
+                margin-top: 90px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .hero-logo {
+                height: 100px;
+                margin-bottom: 24px;
+            }
+
+            .services {
+                padding: 40px 16px;
+            }
+
+            .services-title {
+                font-size: 28px;
+                margin-bottom: 32px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .service-card {
+                padding: 24px;
+            }
+
+            .service-card h3 {
+                font-size: 20px;
+            }
+
+            .contact {
+                padding: 40px 16px;
+            }
+
+            .contact-title {
+                font-size: 28px;
+                margin-bottom: 32px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .contact-item {
+                padding: 20px;
+            }
+
+            .whatsapp-container {
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .whatsapp-button {
+                width: 56px;
+                height: 56px;
+            }
+
+            .whatsapp-button svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            .whatsapp-menu {
+                min-width: 260px;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            .header-content {
+                padding: 14px 20px;
+            }
+
+            .header-left {
+                gap: 14px;
+            }
+
+            .header-nav {
+                display: flex;
+            }
+
+            .header-nav a {
+                font-size: 16px;
+            }
+
+            .header-text h1 {
+                font-size: 20px;
+            }
+
+            .header-text p {
+                font-size: 11px;
+            }
+
+            .header-logo {
+                height: 72px;
+                width: 72px;
+            }
+
+            .hero {
+                padding: 60px 24px;
+                margin-top: 110px;
+            }
+
+            .hero-title {
+                font-size: 44px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+            }
+
+            .hero-logo {
+                height: 140px;
+            }
+
+            .services {
+                padding: 60px 24px;
+            }
+
+            .services-title {
+                font-size: 36px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                padding: 60px 24px;
+            }
+
+            .contact-title {
+                font-size: 36px;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+ </head>
+ <body><!-- Header -->
+  <header class="header">
+   <div class="header-content">
+    <div class="header-left"><a href="#inicio" style="display: flex; align-items: center; text-decoration: none;"> <img src="https://i.imgur.com/XKUn4xE.png" alt="Martínez y Asociados Logo" class="header-logo" onerror="this.style.display='none';"> </a>
+     <div class="header-text">
+      <h1 id="firm-name">Martínez y Asociados</h1>
+      <p id="tagline">Soluciones legales profesionales en Venezuela</p>
+     </div>
+    </div>
+    <nav class="header-nav"><a href="#servicios">Servicios</a> <a href="#contacto">Contacto</a>
+    </nav><button class="mobile-menu-button" id="mobile-menu-button" aria-label="Menú"> <span></span> <span></span> <span></span> </button>
+   </div>
+  </header><!-- Mobile Menu -->
+  <nav class="mobile-menu" id="mobile-menu"><a href="#servicios">Servicios</a> <a href="#contacto">Contacto</a>
+  </nav><!-- Hero Section -->
+  <section id="inicio" class="hero">
+   <div class="hero-content"><img src="https://i.imgur.com/XKUn4xE.png" alt="Martínez y Asociados" class="hero-logo" style="height: 280px;" onerror="this.style.display='none';">
+    <h2 id="hero-title" class="hero-title">Expertos en Derecho</h2>
+    <p id="hero-subtitle" class="hero-subtitle">Defendiendo sus derechos con profesionalismo, experiencia y dedicación en Venezuela</p>
+   </div>
+  </section><!-- Services Section -->
+  <section id="servicios" class="services">
+   <div class="services-content">
+    <h2 id="services-title" class="services-title">Nuestros Servicios</h2>
+    <div class="services-grid">
+     <div class="service-card">
+      <div class="service-icon">
+       🏢
+      </div>
+      <h3>Constitución de Compañías</h3>
+      <p>Constitución de Compañías Anónimas y Firma Personal. Asesoramiento completo en la creación y registro de empresas.</p>
+      <ul class="service-list">
+       <li>• Documentación legal completa</li>
+       <li>• Registro mercantil</li>
+       <li>• Estatutos sociales</li>
+      </ul>
+     </div>
+     <div class="service-card">
+      <div class="service-icon">
+       📋
+      </div>
+      <h3>Actas de Asambleas</h3>
+      <p>Redacción y registro de actas de asambleas ordinarias y extraordinarias con validez legal.</p>
+      <ul class="service-list">
+       <li>• Asambleas ordinarias</li>
+       <li>• Asambleas extraordinarias</li>
+       <li>• Certificaciones</li>
+      </ul>
+     </div>
+     <div class="service-card">
+      <div class="service-icon">
+       ✍️
+      </div>
+      <h3>Redacción de Documentos</h3>
+      <p>Redacción profesional de poderes, contratos de ventas y arrendamiento adaptados a sus necesidades.</p>
+      <ul class="service-list">
+       <li>• Poderes generales y especiales</li>
+       <li>• Contratos de compra-venta</li>
+       <li>• Contratos de arrendamiento</li>
+      </ul>
+     </div>
+     <div class="service-card">
+      <div class="service-icon">
+       ⚖️
+      </div>
+      <h3>Asesoría Legal</h3>
+      <p>Asesoría legal integral para particulares y empresas en todas las áreas del derecho.</p>
+      <ul class="service-list">
+       <li>• Consultas personalizadas</li>
+       <li>• Análisis de casos</li>
+       <li>• Estrategias legales</li>
+      </ul>
+     </div>
+     <div class="service-card">
+      <div class="service-icon">
+       💼
+      </div>
+      <h3>Derecho Laboral</h3>
+      <p>Cálculo de prestaciones sociales y redacción de contratos de trabajo conforme a la ley venezolana.</p>
+      <ul class="service-list">
+       <li>• Cálculo de prestaciones</li>
+       <li>• Contratos laborales</li>
+       <li>• Asesoría en LOTTT</li>
+      </ul>
+     </div>
+     <div class="service-card">
+      <div class="service-icon">
+       👨‍👩‍👧‍👦
+      </div>
+      <h3>Derecho Sucesoral</h3>
+      <p>Declaraciones sucesorales y declaración única de herederos con trámites completos.</p>
+      <ul class="service-list">
+       <li>• Declaración sucesoral</li>
+       <li>• Declaración de herederos</li>
+       <li>• Partición de bienes</li>
+      </ul>
+     </div>
+     <div class="service-card">
+      <div class="service-icon">
+       📜
+      </div>
+      <h3>Legalización y Apostilla</h3>
+      <p>Servicios de legalización y apostilla de documentos para uso nacional e internacional.</p>
+      <ul class="service-list">
+       <li>• Apostilla de La Haya</li>
+       <li>• Legalización consular</li>
+       <li>• Documentos académicos</li>
+      </ul>
+     </div>
+     <div class="service-card">
+      <div class="service-icon">
+       ✈️
+      </div>
+      <h3>Permisos de Viajes</h3>
+      <p>Gestión de permisos de viaje para menores y documentación necesaria para salidas del país.</p>
+      <ul class="service-list">
+       <li>• Permisos notariados</li>
+       <li>• Autorización de padres</li>
+       <li>• Documentación completa</li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </section><!-- Contact Section -->
+  <section id="contacto" class="contact">
+   <div class="contact-content">
+    <h2 id="contact-title" class="contact-title">Contáctenos</h2>
+    <div class="contact-grid">
+     <div class="contact-item">
+      <div class="contact-icon">
+       📧
+      </div>
+      <h3>Correo Electrónico</h3><a id="email" href="mailto:contacto@martinezasociados.com">contacto@martinezasociados.com</a>
+     </div>
+     <div class="contact-item">
+      <div class="contact-icon">
+       📍
+      </div>
+      <h3>Ubicación</h3>
+      <p id="location">Venezuela</p>
+     </div>
+     <div class="contact-item">
+      <div class="contact-icon">
+       📱
+      </div>
+      <h3 id="phone-1-name">Abg. Milagros Martinez</h3><a id="phone-1" href="tel:+584147829875">0414-7829875</a>
+     </div>
+     <div class="contact-item">
+      <div class="contact-icon">
+       📱
+      </div>
+      <h3 id="phone-2-name">Equipo Legal</h3><a id="phone-2" href="tel:+584147825840">0414-7825840</a>
+     </div>
+    </div>
+   </div>
+  </section><!-- WhatsApp Floating Button -->
+  <div class="whatsapp-container">
+   <div id="whatsapp-menu" class="whatsapp-menu">
+    <div class="whatsapp-menu-header">
+     <h3>💬 Contáctanos por WhatsApp</h3>
+     <p>Elige con quién deseas hablar</p>
+    </div>
+    <div class="whatsapp-menu-body"><a href="https://wa.me/584147829875" target="_blank" rel="noopener noreferrer" class="whatsapp-contact-option">
+      <div class="whatsapp-avatar">
+       👩‍⚖️
+      </div>
+      <div class="whatsapp-contact-info">
+       <p>Abg. Milagros Martinez</p>
+       <p>0414-7829875</p>
+      </div></a> <a href="https://wa.me/584147825840" target="_blank" rel="noopener noreferrer" class="whatsapp-contact-option">
+      <div class="whatsapp-avatar">
+       📋
+      </div>
+      <div class="whatsapp-contact-info">
+       <p>Equipo Legal</p>
+       <p>0414-7825840</p>
+      </div></a>
+    </div>
+   </div><button id="whatsapp-button" class="whatsapp-button">
+    <svg viewbox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.245 1.407 1.417-5.268-0.322-0.532c-1.296-2.148-1.981-4.623-1.981-7.178 0-7.575 6.168-13.743 13.743-13.743s13.743 6.168 13.743 13.743c0 7.575-6.168 13.743-13.743 13.743zM21.307 18.068c-0.229-0.115-1.355-0.668-1.565-0.745s-0.362-0.115-0.515 0.115c-0.153 0.229-0.592 0.745-0.726 0.897s-0.267 0.172-0.497 0.057c-0.229-0.115-0.967-0.356-1.841-1.136-0.681-0.607-1.141-1.356-1.274-1.585s-0.014-0.353 0.101-0.467c0.104-0.103 0.229-0.267 0.344-0.401s0.153-0.229 0.229-0.382c0.076-0.153 0.038-0.287-0.019-0.401s-0.515-1.241-0.706-1.699c-0.186-0.445-0.374-0.385-0.515-0.391-0.133-0.007-0.286-0.007-0.439-0.007s-0.401 0.057-0.611 0.287c-0.21 0.229-0.802 0.783-0.802 1.909s0.821 2.214 0.936 2.367c0.115 0.153 1.624 2.478 3.933 3.475 0.549 0.237 0.978 0.379 1.312 0.485 0.552 0.175 1.054 0.151 1.451 0.091 0.443-0.066 1.355-0.554 1.546-1.089s0.191-0.993 0.134-1.089c-0.057-0.096-0.21-0.153-0.439-0.267z" />
+    </svg></button>
+  </div><!-- Footer -->
+  <footer class="footer">
+   <p id="footer-text">© 2025 Martínez y Asociados. Todos los derechos reservados.</p>
+  </footer>
+  <script>
+        const defaultConfig = {
+            primary_color: "#1a1a1a",
+            secondary_color: "#2d2d2d",
+            surface_color: "#3d2817",
+            text_color: "#ffffff",
+            accent_color: "#fbbf24",
+            font_family: "system-ui",
+            font_size: 16,
+            firm_name: "Martínez y Asociados",
+            tagline: "Soluciones legales profesionales en Venezuela",
+            hero_title: "Expertos en Derecho",
+            hero_subtitle: "Defendiendo sus derechos con profesionalismo, experiencia y dedicación en Venezuela",
+            services_title: "Nuestros Servicios",
+            contact_title: "Contáctenos",
+            email: "milagrosmart2025@gmail.com",
+            location: "Venezuela",
+            phone_1_name: "Abg. Milagros Martinez",
+            phone_1: "0414-7829875",
+            phone_2_name: "Equipo Legal",
+            phone_2: "0414-7825840",
+            footer_text: "© 2025 Martínez y Asociados. Todos los derechos reservados."
+        };
+
+        async function onConfigChange(config) {
+            const primaryColor = config.primary_color || defaultConfig.primary_color;
+            const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+            const surfaceColor = config.surface_color || defaultConfig.surface_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const accentColor = config.accent_color || defaultConfig.accent_color;
+            const customFont = config.font_family || defaultConfig.font_family;
+            const baseSize = config.font_size || defaultConfig.font_size;
+
+            // Update gradient backgrounds
+            const header = document.querySelector('.header');
+            header.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+
+            const hero = document.querySelector('.hero');
+            hero.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+
+            const contact = document.querySelector('.contact');
+            contact.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+
+            // Update service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.style.backgroundColor = surfaceColor;
+                card.style.borderTopColor = accentColor;
+                card.style.color = textColor;
+            });
+
+            // Update services section background
+            const servicesSection = document.querySelector('.services');
+            servicesSection.style.backgroundColor = surfaceColor;
+
+            // Update font
+            document.body.style.fontFamily = `${customFont}, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif`;
+            document.body.style.fontSize = `${baseSize}px`;
+
+            // Update text content
+            document.getElementById('firm-name').textContent = config.firm_name || defaultConfig.firm_name;
+            document.getElementById('firm-name').style.fontSize = `${baseSize * 1.5}px`;
+
+            document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
+            document.getElementById('tagline').style.fontSize = `${baseSize * 0.75}px`;
+
+            document.getElementById('hero-title').textContent = config.hero_title || defaultConfig.hero_title;
+            document.getElementById('hero-title').style.fontSize = `${baseSize * 3.75}px`;
+
+            document.getElementById('hero-subtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+            document.getElementById('hero-subtitle').style.fontSize = `${baseSize * 1.5}px`;
+
+            document.getElementById('services-title').textContent = config.services_title || defaultConfig.services_title;
+            document.getElementById('services-title').style.fontSize = `${baseSize * 3}px`;
+            document.getElementById('services-title').style.color = textColor;
+
+            document.getElementById('contact-title').textContent = config.contact_title || defaultConfig.contact_title;
+            document.getElementById('contact-title').style.fontSize = `${baseSize * 3}px`;
+
+            const emailElement = document.getElementById('email');
+            emailElement.textContent = config.email || defaultConfig.email;
+            emailElement.href = `mailto:${config.email || defaultConfig.email}`;
+            emailElement.style.fontSize = `${baseSize}px`;
+
+            document.getElementById('location').textContent = config.location || defaultConfig.location;
+            document.getElementById('location').style.fontSize = `${baseSize}px`;
+
+            document.getElementById('phone-1-name').textContent = config.phone_1_name || defaultConfig.phone_1_name;
+            document.getElementById('phone-1-name').style.fontSize = `${baseSize * 1.25}px`;
+
+            const phone1Element = document.getElementById('phone-1');
+            phone1Element.textContent = config.phone_1 || defaultConfig.phone_1;
+            phone1Element.href = `tel:+58${(config.phone_1 || defaultConfig.phone_1).replace(/\D/g, '')}`;
+            phone1Element.style.fontSize = `${baseSize}px`;
+
+            document.getElementById('phone-2-name').textContent = config.phone_2_name || defaultConfig.phone_2_name;
+            document.getElementById('phone-2-name').style.fontSize = `${baseSize * 1.25}px`;
+
+            const phone2Element = document.getElementById('phone-2');
+            phone2Element.textContent = config.phone_2 || defaultConfig.phone_2;
+            phone2Element.href = `tel:+58${(config.phone_2 || defaultConfig.phone_2).replace(/\D/g, '')}`;
+            phone2Element.style.fontSize = `${baseSize}px`;
+
+            document.getElementById('footer-text').textContent = config.footer_text || defaultConfig.footer_text;
+            document.getElementById('footer-text').style.fontSize = `${baseSize}px`;
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [
+                    {
+                        get: () => config.primary_color || defaultConfig.primary_color,
+                        set: (value) => {
+                            config.primary_color = value;
+                            window.elementSdk.setConfig({ primary_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.secondary_color || defaultConfig.secondary_color,
+                        set: (value) => {
+                            config.secondary_color = value;
+                            window.elementSdk.setConfig({ secondary_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.surface_color || defaultConfig.surface_color,
+                        set: (value) => {
+                            config.surface_color = value;
+                            window.elementSdk.setConfig({ surface_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.text_color || defaultConfig.text_color,
+                        set: (value) => {
+                            config.text_color = value;
+                            window.elementSdk.setConfig({ text_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.accent_color || defaultConfig.accent_color,
+                        set: (value) => {
+                            config.accent_color = value;
+                            window.elementSdk.setConfig({ accent_color: value });
+                        }
+                    }
+                ],
+                borderables: [],
+                fontEditable: {
+                    get: () => config.font_family || defaultConfig.font_family,
+                    set: (value) => {
+                        config.font_family = value;
+                        window.elementSdk.setConfig({ font_family: value });
+                    }
+                },
+                fontSizeable: {
+                    get: () => config.font_size || defaultConfig.font_size,
+                    set: (value) => {
+                        config.font_size = value;
+                        window.elementSdk.setConfig({ font_size: value });
+                    }
+                }
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["firm_name", config.firm_name || defaultConfig.firm_name],
+                ["tagline", config.tagline || defaultConfig.tagline],
+                ["hero_title", config.hero_title || defaultConfig.hero_title],
+                ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+                ["services_title", config.services_title || defaultConfig.services_title],
+                ["contact_title", config.contact_title || defaultConfig.contact_title],
+                ["email", config.email || defaultConfig.email],
+                ["location", config.location || defaultConfig.location],
+                ["phone_1_name", config.phone_1_name || defaultConfig.phone_1_name],
+                ["phone_1", config.phone_1 || defaultConfig.phone_1],
+                ["phone_2_name", config.phone_2_name || defaultConfig.phone_2_name],
+                ["phone_2", config.phone_2 || defaultConfig.phone_2],
+                ["footer_text", config.footer_text || defaultConfig.footer_text]
+            ]);
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let mobileMenuOpen = false;
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuOpen = !mobileMenuOpen;
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuOpen = false;
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // WhatsApp floating button functionality
+        const whatsappButton = document.getElementById('whatsapp-button');
+        const whatsappMenu = document.getElementById('whatsapp-menu');
+        let menuOpen = false;
+
+        whatsappButton.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            whatsappMenu.style.display = menuOpen ? 'block' : 'none';
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const container = document.querySelector('.whatsapp-container');
+            if (!container.contains(e.target) && menuOpen) {
+                menuOpen = false;
+                whatsappMenu.style.display = 'none';
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ed3d67de29d3332',t:'MTc3NjM0OTMwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
